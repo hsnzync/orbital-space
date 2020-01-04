@@ -1,0 +1,37 @@
+.main-menu {
+    background-color: $dark_grey;
+    position: fixed;
+    top: 0;
+    height: 100%;
+    width: 180px;
+
+    ul {
+        padding: 0;
+        text-align: left;
+
+        .main-menu-items {
+            padding-top: 20px;
+
+            a:nth-of-type(3) {
+                font-weight: 800;
+                position: absolute;
+                bottom: 15px;
+            }
+
+            a {
+                color: $white;
+
+                .main-menu-item {
+                    list-style: none;
+                    padding: 10px 20px;
+                }
+            }
+        }
+        .main-menu-header {
+            background-color: $blue;
+            padding: 10px 20px;
+            font-weight: 900;
+            font-size: 20px;
+        }
+    }
+}

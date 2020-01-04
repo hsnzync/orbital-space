@@ -1,0 +1,199 @@
+#main {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: $white;
+    margin-top: 60px;
+    min-height: 900px;
+
+    .content {
+        margin-left: 180px;
+    }
+}
+
+body {
+    background: linear-gradient(218deg, #715ace, #619bdf);
+    background-size: 400% 400%;
+
+    -webkit-animation: AnimationName 22s ease infinite;
+    -moz-animation: AnimationName 22s ease infinite;
+    animation: AnimationName 22s ease infinite;
+
+    @-webkit-keyframes AnimationName {
+        0% {
+            background-position: 93% 0%;
+        }
+
+        50% {
+            background-position: 0% 100%;
+        }
+
+        100% {
+            background-position: 93% 0%;
+        }
+    }
+
+    @-moz-keyframes AnimationName {
+        0% {
+            background-position: 93% 0%;
+        }
+
+        50% {
+            background-position: 0% 100%;
+        }
+
+        100% {
+            background-position: 93% 0%;
+        }
+    }
+
+    @keyframes AnimationName {
+        0% {
+            background-position: 93% 0%;
+        }
+
+        50% {
+            background-position: 0% 100%;
+        }
+
+        100% {
+            background-position: 93% 0%;
+        }
+    }
+}
+
+.main-header {
+    padding: 0 35px;
+
+    .main-header-icon {
+        width: 40px;
+        float: left;
+        margin-right: 20px;
+    }
+}
+
+.row {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+    padding: 0;
+}
+
+.space-wrapper {
+    padding: 15px;
+
+    .planet-wrapper {
+        padding: 20px;
+        height: max-content;
+
+        .planet-block {
+            // height: 330px;
+            // background-color: $white;
+            border-radius: 10px;
+            color: $white;
+            font-weight: 900;
+            padding: 30px 40px;
+            min-height: 310px;
+            -webkit-box-shadow: 0px 0px 38px -6px rgba(0, 0, 0, 0.5);
+            -moz-box-shadow: 0px 0px 38px -6px rgba(0, 0, 0, 0.5);
+            box-shadow: 0px 0px 38px -6px rgba(0, 0, 0, 0.5);
+
+            &.moon-block {
+                height: 330px;
+                min-height: 330px !important;
+            }
+
+            .planet-block-info {
+                margin: 15px 0;
+
+                p {
+                    text-decoration: none;
+                    color: $black;
+                    margin: 0;
+                    font-weight: 500;
+
+                    .planet-block-info-title {
+                        font-weight: 900;
+                    }
+                }
+
+                .planet-block-details {
+                    padding-bottom: 10px;
+                    .planet-block-title-image {
+                        width: 30px;
+                        float: left;
+                        margin-right: 15px;
+                    }
+
+                    p {
+                        padding: 10px 0;
+                    }
+
+                    h4 {
+                        color: $black;
+                        font-weight: 900;
+                        border-bottom: 1px solid #eee;
+                        padding: 0 0 10px 0;
+                        margin-bottom: 0;
+                    }
+
+                    .planet-block-info-planettype {
+                        color: $grey;
+                        font-weight: 500;
+                        font-size: 15px;
+                    }
+                }
+
+                .planet-block-extra {
+                    padding: 10px 0 40px 0;
+                    display: none;
+                    p {
+                        padding: 0;
+                    }
+                    &.active {
+                        display: block;
+                    }
+                }
+            }
+
+            button {
+                padding: 5px 25px;
+                position: absolute;
+                bottom: 35px;
+                background-color: $dark-blue;
+                border: none;
+
+                &:hover {
+                    background-color: $purple;
+                }
+                &:focus {
+                    box-shadow: none;
+                }
+            }
+
+            .moons-count {
+                position: absolute;
+                right: 40px;
+                bottom: 20px;
+                background-color: $light-grey;
+                a {
+                    color: $dark-grey;
+                    transition: 0.3s;
+                    &:hover {
+                        text-decoration: none;
+                        background-color: $blue;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1180px) {
+    .content {
+        margin-left: 0 !important;
+    }
+
+    .main-menu {
+        display: none;
+    }
+}
