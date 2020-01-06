@@ -5,7 +5,11 @@
             <Header :title="title" :description="checkRouteName"></Header>
 
             <div class="search-wrapper">
-                <input type="text" v-model="search" placeholder="Search for a planet.." />
+                <input
+                    type="text"
+                    v-model="search"
+                    placeholder="Search for a planet.."
+                />
             </div>
 
             <router-view :spaceData="planets" :search="search"></router-view>
@@ -15,27 +19,27 @@
 
 <script>
 // import axios from 'axios'
-import Menu from './components/base/Menu'
-import Header from './components/base/Header'
+import Menu from "./components/base/Menu";
+import Header from "./components/base/Header";
 // import Searchbar from './components/utils/Searchbar'
-import data from '../data'
+import data from "../data";
 
 export default {
-    name: 'main',
+    name: "main",
     components: {
         Menu,
-        Header,
+        Header
         // Searchbar,
     },
     data() {
         return {
-            title: 'Welcome traveler',
+            title: "Welcome traveler",
             planetsDescription:
-                'This is a list of all planets in our solar system',
-            moonsDescription: 'All available moons are listed here',
+                "This is a list of all planets in our solar system",
+            moonsDescription: "All available moons are listed here",
             planets: data.bodies,
-            search: '',
-        }
+            search: ""
+        };
     },
     // mounted() {
     //     axios
@@ -46,18 +50,19 @@ export default {
     // },
     computed: {
         checkRouteName() {
-            if (this.$route.path == '/moons') {
-                return this.moonsDescription
+            if (this.$route.path == "/moons") {
+                return this.moonsDescription;
             } else {
-                return this.planetsDescription
+                return this.planetsDescription;
             }
-        },
-    },
-}
+        }
+    }
+};
 </script>
 
 <style lang="scss">
-@import './assets/scss/components/colors.scss';
-@import './assets/scss/main.scss';
-@import './assets/scss/components/searchbar.scss';
+@import "./assets/scss/components/colors.scss";
+@import "./assets/scss/main.scss";
+@import "./assets/scss/components/searchbar.scss";
+@import "./assets/scss/components/filter.scss";
 </style>

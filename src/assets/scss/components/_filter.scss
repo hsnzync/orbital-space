@@ -1,0 +1,31 @@
+.planets {
+    .moon-filter {
+        padding: 0 35px;
+        h4 {
+            cursor: pointer;
+            max-width: 100px;
+            &:hover {
+                text-decoration: underline;
+            }
+            // background-color: $light-grey;
+            // color: $black;
+        }
+        div {
+            display: inline-block;
+            margin-right: 20px;
+            input {
+                margin-right: 5px;
+                position: relative;
+                top: -2px;
+            }
+        }
+        span {
+            font-weight: 900;
+            cursor: pointer;
+            transition: 0.3s;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
