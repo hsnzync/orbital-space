@@ -1,7 +1,9 @@
 <template>
     <div class="planets">
         <div class="moon-filter">
-            <h4 @click="showFilters">Filters →</h4>
+            <h4 @click="showFilters">
+                <font-awesome-icon icon="filter" size="xs" /> Filters
+            </h4>
             <div v-if="isOpen">
                 <div v-for="(planet, index) in planets" :key="index">
                     <input
@@ -83,8 +85,10 @@
 </template>
 
 <script>
+import { EARTH, SATURN, PLUTO } from '../constants/planets';
+
 export default {
-    name: "Moons",
+    name: 'Moons',
     props: {
         spaceData: {
             type: Array,
@@ -94,43 +98,43 @@ export default {
         search: {
             type: String,
             required: false,
-            default: ""
+            default: ''
         }
     },
     data() {
         return {
             isOpen: false,
             selected: [],
-            selectedPlanet: "",
+            selectedPlanet: '',
             planets: [
-                "terre",
-                "saturne",
-                "jupiter",
-                "pluton",
-                "uranus",
-                "mars",
-                "haumea",
-                "eris",
-                "makemake"
+                'terre',
+                'saturne',
+                'jupiter',
+                'pluton',
+                'uranus',
+                'mars',
+                'haumea',
+                'eris',
+                'makemake'
             ]
         };
     },
     methods: {
         handleMoonName(moon) {
-            return moon.englishName.replace(/[^a-zA-Z]/g, "");
+            return moon.englishName.replace(/[^a-zA-Z]/g, '');
         },
         mapPlanetName(planet) {
-            if (planet == "terre") {
-                return "Earth";
-            } else if (planet == "saturne") {
-                return "Saturn";
-            } else if (planet == "pluton") {
-                return "Pluto";
+            if (planet == 'terre') {
+                return EARTH;
+            } else if (planet == 'saturne') {
+                return SATURN;
+            } else if (planet == 'pluton') {
+                return PLUTO;
             }
             return planet.charAt(0).toUpperCase() + planet.slice(1);
         },
         resetFilter() {
-            this.selectedPlanet = "";
+            this.selectedPlanet = '';
         },
         showFilters() {
             if (this.isOpen) {
@@ -139,20 +143,13 @@ export default {
                 this.isOpen = true;
             }
         }
-        // handlePlanetHeader(moon) {
-        //     if (moon.aroundPlanet.planet == 'saturne') {
-        //         return 'Saturn'
-        //     }
-        // },
     },
     computed: {
         cleanMoons() {
-            // let url = new URL(window.location.href);
-
             return this.spaceData.filter(moon => {
                 // check if valid planets instead of moons
                 if (!moon.isPlanet && moon.aroundPlanet) {
-                    if (this.selectedPlanet != "") {
+                    if (this.selectedPlanet != '') {
                         return moon.aroundPlanet.planet
                             .toLowerCase()
                             .includes(this.selectedPlanet);

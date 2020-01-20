@@ -14,13 +14,23 @@
             display: inline-block;
             margin-right: 20px;
             input {
-                margin-right: 5px;
-                position: relative;
-                top: -2px;
+                display: none;
+                &:checked + label {
+                    color: $black;
+                    background-color: $light-grey;
+                }
+            }
+            label {
+                font-weight: 500;
+                cursor: pointer;
+                &:hover {
+                    color: $black;
+                }
             }
         }
         span {
             font-weight: 900;
+            color: $black;
             cursor: pointer;
             transition: 0.3s;
             &:hover {

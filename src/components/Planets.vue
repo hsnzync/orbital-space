@@ -91,10 +91,15 @@
 </template>
 
 <script>
-import { MORE_INFO, LESS_INFO } from "../constants/planets";
+import {
+    MORE_INFO,
+    LESS_INFO,
+    PLANET,
+    DWARF_PLANET
+} from '../constants/planets';
 
 export default {
-    name: "Planets",
+    name: 'Planets',
     props: {
         spaceData: {
             type: Array,
@@ -104,7 +109,7 @@ export default {
         search: {
             type: String,
             required: false,
-            default: ""
+            default: ''
         }
     },
     data() {
@@ -114,22 +119,22 @@ export default {
     },
     methods: {
         imgPreUrl(planet) {
-            return require("../assets/img/" + planet + ".png");
+            return require('../assets/img/' + planet + '.png');
         },
         handlePlanetName(planet) {
-            return planet.englishName.replace(/\d+/g, "");
+            return planet.englishName.replace(/\d+/g, '');
         },
         handlePlanetType(planet) {
             if (
-                planet.id == "ceres" ||
-                planet.id == "haumea" ||
-                planet.id == "eris" ||
-                planet.id == "makemake" ||
-                planet.id == "pluton"
+                planet.id == 'ceres' ||
+                planet.id == 'haumea' ||
+                planet.id == 'eris' ||
+                planet.id == 'makemake' ||
+                planet.id == 'pluton'
             ) {
-                return "Dwarfplanet";
+                return DWARF_PLANET;
             } else {
-                return "Planet";
+                return PLANET;
             }
         },
         showDetails(index) {
@@ -171,5 +176,5 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
-@import "../assets/scss/components/colors.scss";
+@import '../assets/scss/components/colors.scss';
 </style>

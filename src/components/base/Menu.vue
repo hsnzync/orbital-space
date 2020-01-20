@@ -1,7 +1,9 @@
 <template>
     <div class="main-menu">
         <ul>
-            <li class="main-menu-header">Spaceue</li>
+            <li class="main-menu-header">
+                Spaceue <font-awesome-icon icon="bars" size="xs" />
+            </li>
             <div class="main-menu-items">
                 <router-link to="/">
                     <li class="main-menu-item">Planets</li>
