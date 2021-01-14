@@ -1,41 +1,41 @@
 .planets {
-    .moon-filter {
-        padding: 0 35px;
-        h4 {
-            cursor: pointer;
-            max-width: 100px;
-            &:hover {
-                text-decoration: underline;
-            }
-            // background-color: $light-grey;
-            // color: $black;
-        }
-        div {
-            display: inline-block;
-            margin-right: 20px;
-            input {
-                display: none;
-                &:checked + label {
-                    color: $black;
-                    background-color: $light-grey;
-                }
-            }
-            label {
-                font-weight: 500;
-                cursor: pointer;
-                &:hover {
-                    color: $black;
-                }
-            }
-        }
-        span {
-            font-weight: 900;
-            color: $black;
-            cursor: pointer;
-            transition: 0.3s;
-            &:hover {
-                text-decoration: underline;
-            }
-        }
+  .moon-filter {
+    padding: 0 35px;
+    button {
+      &:hover {
+        text-decoration: underline;
+      }
+      // background-color: $light-grey;
+      // color: $black;
     }
+    div {
+      display: inline-block;
+      padding: 0;
+      margin-right: 20px;
+      margin-top: 5px;
+      input {
+        display: none;
+        &:checked + label {
+          color: $black;
+          background-color: $light-grey;
+        }
+      }
+      label {
+        font-weight: 500;
+        cursor: pointer;
+        &:hover {
+          color: $black;
+        }
+      }
+    }
+    span {
+      font-weight: 900;
+      color: $black;
+      cursor: pointer;
+      transition: 0.3s;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
 }
